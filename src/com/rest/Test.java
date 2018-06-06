@@ -3,6 +3,8 @@ package com.rest;
 public class Test {
 
 	public static void main(String[] args) {
-		System.out.println("hhhhhhhhhhhhh");
+		for (int i = 0; i < 6; i++) {
+			System.out.println("hhhhhhhhhhhhh"+i);
+		}
 	}
 }
