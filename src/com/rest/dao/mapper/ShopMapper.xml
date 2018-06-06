@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.rest.dao.mapper.ShopMapper">
+
+	<resultMap type="com.rest.dao.bean.Shop" id="shop">
+		<result column="shop_id" property="shopId"/>		
+		<result column="mall_id" property="mallId"/>
+		<result column="name" property="name"/>
+	</resultMap>
+
+	<sql id="base_list">
+		shop_id,mall_id,name
+	</sql>
+	
+	<select id="getShop" parameterType="string" resultMap="shop">
+		select <include refid="base_list" /> from shop where name like '%#{name}%'
+	</select>
+	
+	<insert id="addShop" parameterType="com.rest.dao.bean.Shop" >
+		insert into shop(mall_id, name) values(#{mallId}, #{name})
+	</insert>
+</mapper>
