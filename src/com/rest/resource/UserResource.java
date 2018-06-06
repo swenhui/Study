@@ -8,6 +8,9 @@ public class UserResource {
 	}
 	
 	public void demo(){
-		System.out.println("这也是");
+		System.out.println("这也是分支中的");
+	}
+	public void demo2(){
+		System.out.println("这是实例2");
 	}
 }
